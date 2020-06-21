@@ -2,22 +2,32 @@
 % Свежая версия шаблона здесь <https://www.overleaf.com/read/sqvxbnhgxxdm>
 
 
-\usepackage[a4paper, left=20mm, top=15mm, right=15mm, bottom=15mm, nohead, footskip=10mm]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
-\usepackage{cmap} % Позволяет поиск и копирование кириллицы.
-\usepackage[T2A]{fontenc}
-
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{indentfirst}
-\usepackage{amsmath}
-\usepackage{amsopn}
-\usepackage{amssymb}
-\usepackage{amsthm}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{geometry}
 \usepackage{graphicx}
-\usepackage{ulem}
-\usepackage{minted}
-%\newcommand{\uwave}{}
+\usepackage[final]{pdfpages}
+\usepackage{amsmath,amsthm,amssymb,unicode-math}
+\usepackage{wrapfig,multicol,tabularx,booktabs}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{xcolor}
+%\usepackage{slashbox} %% разделение ячеек таблиц
+%\usepackage{minted} %% листинги
+%\usepackage{ulem} %% зачеркивание текста
+
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\setkeys{russian}{babelshorthands=true}
+
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{CMU Serif Roman}
+%\setmathfont{STIX Two Math}
+
+\newfontfamily{\cyrillicfont}{CMU Serif Roman}
+\newfontfamily{\cyrillicfontrm}{CMU Serif Roman}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+\newfontfamily{\cyrillicfontsf}{CMU Serif Roman}
 \newcommand{\const}{\mathrm{const}}
 
 %\renewcommand{\thefigure}{\thesection.\arabic{figure}}
