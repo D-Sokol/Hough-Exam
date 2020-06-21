@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+% Свежая версия шаблона здесь <https://www.overleaf.com/read/sqvxbnhgxxdm>
+
+
+\usepackage[a4paper, left=20mm, top=15mm, right=15mm, bottom=15mm, nohead, footskip=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap} % Позволяет поиск и копирование кириллицы.
+\usepackage[T2A]{fontenc}
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{amsopn}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{minted}
+%\newcommand{\uwave}{}
+\newcommand{\const}{\mathrm{const}}
+
+%\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+%\renewcommand{\thetable}{\thesection.\arabic{table}}
+%\numberwithin{equation}{section}
+\everymath{\displaystyle}
+\graphicspath{{./img/}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\theoremstyle{definition}
+\newtheorem{definition}{Опр.}[]
+\theoremstyle{remark}
+\newtheorem{statement}{Утв.}[]
+\theoremstyle{plain}
+\newtheorem{theorem}{Теор.}[]
+\newtheorem{axiom}{Аксиома}[]
+\theoremstyle{definition}
+\newtheorem{example}{Пример}[]
+\addto\captionsrussian{
+  \renewcommand{\figurename}{Рис.}
+  \renewcommand{\tablename}{Табл.}
+  \renewcommand{\proofname}{$\square$}
+}
+
+%% Дима
+% Общее
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi} % не работает
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+% Для МСС
+\newcommand{\e}{\bar{\vec{\mathrm{e}}}}
+\newcommand{\zero}[1]{\stackrel{\raisebox{-2mm}{$\circ$}}{#1}}
+% Для теорвера
+\DeclareMathOperator{\mean}{M}
+\DeclareMathOperator{\disp}{D}
+\DeclareMathOperator{\cov}{cov}
+
+
+\newcounter{QuestionID}
+\newcommand{\supersection}[1]{
+	\stepcounter{QuestionID}
+	\section*{\arabic{QuestionID}. #1}
+	\addcontentsline{toc}{section}{\arabic{QuestionID}. #1}
+}
