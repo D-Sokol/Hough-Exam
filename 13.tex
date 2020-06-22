@@ -27,9 +27,10 @@
 \end{gather*}
 
 Используем теорему \ref{fourier_slice_thm} для замены $F(\omega\cos\theta, \omega\sin\theta) = \hat{p}_{\theta}(\omega)$. Также введем для краткости обозначение $s = x\cos\theta + y\sin\theta$.
-\begin{gather*}
+\begin{gather}
+\label{fbp_proof}
     \int_{0}^{\pi} \int_{\mathbb{R}} |\omega| \hat{p}_{\theta}(\omega) e^{2\pi i s \omega} d\omega d\theta =
     \int_{0}^{\pi} \left[ \mathcal{F}^{-1} \left( |\omega| \hat{p}_\theta(\omega) \right) \right](s) d\theta.
-\end{gather*}
+\end{gather}
 
 Если удалить из последнего выражения якобиан $|\omega|$, оставив под интегралом вместо выражения $\mathcal{F}^{-1}\left[ \hat{p}_\theta(\omega) \right](s) = p_\theta(s) = p_\theta\left( x\cos\theta + y\sin\theta \right)$ то получится в точности выражение \eqref{backprojection}.
