@@ -1,2 +1,35 @@
 % Теорема о центральном сечении.
 
+Преобразование Фурье функций от одной и от двух переменных задаются следующими формулами:
+\begin{gather}
+\label{fourier1D}
+    \hat{f}(\omega) = \int_{\mathbb{R}} f(t) e^{-2\pi i (\omega t)} dt,\\
+\label{fourier2D}
+    \hat{F}(u, v) = \int_{\mathbb{R}^2} f(x, y) e^{-2\pi i (xu + yv)} du dv.
+\end{gather}
+
+Также введем сокращенное обозначение для преобразования Радона, считая $\theta$ фиксированным параметром, а $s$ -- переменной:
+\begin{equation*}
+    p_\theta(s) := \left[ \mathcal{R}f \right]\left( \theta, s \right).
+\end{equation*}
+
+\begin{theorem}{О центральном сечении.}
+    Преобразование Фурье от $p_\theta(s)$ совпадает со значениями двумерного преобразования Фурье от $f(x, y)$ на некоторой прямой:
+    \begin{equation*}
+        \hat{p}_\theta(\omega) = F(\omega\cos\theta, \omega\sin\theta)
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    Преобразуем определение преобразований Фурье и Радона, используя основное свойство дельта-функции (а также $\delta(t) = \delta(-t)$):
+    \begin{gather*}
+        \hat{p}_\theta(\omega) =
+        \int_{\mathbb{R}} p_\theta(s) e^{-2\pi i \omega s} ds =\\=
+        \int_{\mathbb{R}^3} f(x, y) \cdot \delta(x\cos\theta + y\sin\theta - s) e^{-2\pi i \omega s} dx dy ds =
+        \int_{\mathbb{R}^2} f(x, y) e^{-2\pi i \omega \left( x\cos\theta + y\sin\theta \right)} dx dy;\\
+        F(u=\omega\cos\theta, v=\omega\sin\theta) =
+        \left.\int_{\mathbb{R}^2} f(x, y) e^{-2\pi i \left( x u + y v \right)}\right|_{\substack{u=\omega\cos\theta\\v=\omega\sin\theta}} =
+        \hat{p}_\theta(s).
+    \end{gather*}
+\end{proof}
+
+Таким образом, прямая, вырезанная из двумерного Фурье-образа исходной функции, проходящая через начало координат, фактически описывает интегралы этой функции вдоль всех прямых, параллельных вырезанной. Получить их можно при помощи обратного к \eqref{fourier1D} преобразования.
